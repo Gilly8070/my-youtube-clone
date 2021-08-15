@@ -49,5 +49,9 @@ color: red;
 .currentIn>p {
     font-weight: bold;
     /* background-color: #bcb8b1; */
-
+}
+.horizontalLine {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    opacity: 0.6;
 }

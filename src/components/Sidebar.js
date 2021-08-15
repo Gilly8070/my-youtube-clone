@@ -31,6 +31,7 @@ const Sidebar = () => {
                 </span>
                 <p>Subscription</p>
             </div>
+            <hr className='horizontalLine' />
             <div>
                 <span>
                 <MdVideoLibrary />
@@ -67,6 +68,7 @@ const Sidebar = () => {
                 </span>
                 <p>Show more</p>
             </div>
+            <hr className='horizontalLine' />
         </div>
     )
 }

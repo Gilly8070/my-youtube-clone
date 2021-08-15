@@ -55,15 +55,23 @@ margin-bottom: 2px;
     font-size: 0.9rem;
     display: flex;
     flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
 }
 .dotContainer > p {
     /* border: 1px solid black; */
     align-self: center;
+    /* text-align: right; */
 }
 .singleDot {
+    /* border: 1px solid black; */
     font-size: 1.3rem;
-    margin-top: 2px;
+    /* margin-top: 2px; */
     align-self: center;
+}
+.hoursAgo {
+    /* border: 1px solid black; */
+    text-align: right;
 }
 .checking {
     /* border: 1px solid black; */
