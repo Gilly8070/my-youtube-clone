@@ -3,16 +3,17 @@ import React, {useState, useEffect } from 'react'
 import axios from 'axios';
 import './styles/Youtube.css'
 import {BsDot} from 'react-icons/bs'
+// import YoutubeEmbedVideo from "youtube-embed-video";
 
 const YouTube = () => {
     const [videoList, setVideoList] = useState([])
     const [img2, setImg2] = useState([])
+    // const [check, setCheck] = useState([localStorage.getItem('youtubeData2')]);
     useEffect(() => {
-
         getUser();
         async function getUser() {
-            /////// PROJECT NAME MY PROJECT 4108 //////////
-            let API_key = "AIzaSyC6qWBjmLdzOiSUR-ROkKTyY04mISH2q3Y";
+            /////// PROJECT NAME youtube2 from shaikhgulrez8070@gmail.com //////////
+            let API_key = "AIzaSyDhmmOWBP2F2rw5k17vYLpM9gvtFCAQOeA";
             let maxResults = 15;
             // let arr = [];
             let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=${API_key}&maxResults=${maxResults}`
@@ -20,6 +21,8 @@ const YouTube = () => {
             await axios.get(url)
                 .then((res) => {
                     setVideoList(res.data.items);
+                    // localStorage.setItem('youtubeData1', res.data.items);
+                    // console.log(localStorage.getItem('youtubeData1'), check, res.data.items)
                     !img2.includes(res.data.items.map((el) => el.snippet.channelId)) &&
                         res.data.items.forEach(async (el, index) => {
                             let url2 = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${el.snippet.channelId}&key=${API_key}`
@@ -36,6 +39,7 @@ const YouTube = () => {
                                     // if (img2 !== undefined && videoList !== undefined &&!img2.find((el) => el !== undefined &&  el.channelId === el.snippet.channelId)) {
                                     setImg2(prev => [...prev, { channelId: ans.data.items[0].id, ProfilePic: ans.data.items[0].snippet.thumbnails.high.url }]);
 
+    // localStorage.setItem('youtubeData2', [...img2,  { channelId: ans.data.items[0].id, ProfilePic: ans.data.items[0].snippet.thumbnails.high.url }]);
 
                                     // }
                                     // }
@@ -54,8 +58,8 @@ const YouTube = () => {
             // console.log(videoList);
         
         }
-    }, [img2])
-        
+    }, [])
+    // console.log(img2, videoList);
     const formatCash = n => {
         if (n < 1e3) return n;
         if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
@@ -132,6 +136,7 @@ return (
     //     title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> BsDot
     <div className='mainContainer'>
         <h2 className='heading'>Recommended</h2>
+{/* <YoutubeEmbedVideo videoId="RnDC9MXSqCY" suggestions={false} /> */}
         <div className='singleVideoContainer'>
             {
                 videoList.map((single, index) => {
