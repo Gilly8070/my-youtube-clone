@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   /* height: 100vh; */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
   /* max-width: 100%; */
   /* display: block; */
   /* position: relative; */

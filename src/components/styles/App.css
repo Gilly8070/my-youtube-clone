@@ -11,22 +11,32 @@
 }
 
 .displaySize {
-    /* background-color: #e9edc9; */
     /* width: 100%; */
     /* display: flex; */
     /* flex-direction: row; */
     /* justify-content: space-between; */
     /* align-content: space-between; */
     /* border: 1px solid black; */
-    height: calc(100vh - 90px);
+
+    /* height: calc(100vh - 90px); */
+
     display: grid;
     grid-template-columns: 220px calc(100% - 220px);
     z-index: 1;
     position: relative;
-    top: 90px;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    top: 90px;  /* 1px left for youTube scrollbar */
     background-color: #f9f9f9;
+
+
+    /* margin-top: 90px; */
+    /* -ms-overflow-style: none; */
+    /* scrollbar-width: none;  */
+
+    /* background-color: black; */
+
+    /* overflow-y: scroll; */
+
+    /* overflow: hidden; */
     /* grid-gap: 20px; */
     /* grid-template-columns: 30% 70%; */
     /* grid-template-columns: 300px calc(100%-300px); */
@@ -53,5 +63,5 @@
 /* } */
 /* } */
 .displaySize::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
 }

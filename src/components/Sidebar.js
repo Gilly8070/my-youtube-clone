@@ -8,11 +8,39 @@ import { AiOutlineLike } from 'react-icons/ai';
 // import { MdSubscriptions } from 'react-icons/md';
 // import { MdSubscriptions } from 'react-icons/md';
 import './styles/Sidebar.css'
+import { useRef } from 'react';
+
 
 const Sidebar = () => {
+    const refFer = useRef(null)
+
+    /////// DETECT SCROLLING UP OR DOWN ///////////////////////////////////////////////////////////////////////////////////
+    var scrollableElement = document.body;
+        scrollableElement.addEventListener('wheel', checkScrollDirection);
+
+        function checkScrollDirection(event) {
+            if (checkScrollDirectionIsUp(event)) {
+            // console.log('Up')
+        } else {
+            // console.log('Down')
+        }
+        }
+
+        function checkScrollDirectionIsUp(event) {
+            if (event.wheelDelta) {
+            return event.wheelDelta > 0;
+        }
+        return event.deltaY < 0;
+        }
+
+    // document.onscroll = (e) => {
+    //     document.getElementById('sidebar');
+    //         // console.log(window.scrollY, '----');
+    // };
+
     return (
         // <i class="fas fa-home"></i>
-        <div className='bgColorSidebar'>
+        <div id='sidebar' ref={refFer} className='bgColorSidebar'>
             <div className='currentIn'>
                 <span >
                 <AiFillHome />

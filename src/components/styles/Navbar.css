@@ -60,6 +60,8 @@ margin: 5px 0px;
 align-self: center;
 opacity: 1;
 border-radius: 3px;
+/* background-color: black; */
+outline: none;
 }
 .inputBorder::after {
     content: '';
