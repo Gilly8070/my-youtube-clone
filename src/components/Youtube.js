@@ -12,7 +12,7 @@ const YouTube = () => {
     useEffect(() => {
         getUser();
         async function getUser() {
-            /////// PROJECT NAME youtube2 from shaikhgulrez8070@gmail.com //////////
+            /////// PROJECT NAME youtube-2 from shaikhgulrez8070@gmail.com //////////
             let API_key = "AIzaSyDhmmOWBP2F2rw5k17vYLpM9gvtFCAQOeA";
             let maxResults = 15;
             // let arr = [];
@@ -58,7 +58,7 @@ const YouTube = () => {
             // console.log(videoList);
         
         }
-    }, [])
+    }, [img2])
     // console.log(img2, videoList);
     const formatCash = n => {
         if (n < 1e3) return n;
