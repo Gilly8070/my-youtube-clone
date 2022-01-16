@@ -12,14 +12,18 @@ const YouTube = () => {
     useEffect(() => {
         getUser();
         async function getUser() {
-            /////// PROJECT NAME youtube-2 from shaikhgulrez8070@gmail.com //////////
-            let API_key = "AIzaSyDhmmOWBP2F2rw5k17vYLpM9gvtFCAQOeA";
+            /////// PROJECT NAME my-youtube-clone from shaikhgulrez8070@gmail.com //////////
+            let API_key = "AIzaSyDuo7HgbS9eaEWOjf3M1kK9kqhHbjs65-g";
+            // let API_key = "AIzaSyBfsoSL5ZBha7XbSLm_dkrBIHOtT0QqCTA";
+
+            
             let maxResults = 15;
             // let arr = [];
             let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=${API_key}&maxResults=${maxResults}`
             // let url = 'ssss'
             await axios.get(url)
                 .then((res) => {
+                    console.log(res.data.items);
                     setVideoList(res.data.items);
                     // localStorage.setItem('youtubeData1', res.data.items);
                     // console.log(localStorage.getItem('youtubeData1'), check, res.data.items)
@@ -28,6 +32,7 @@ const YouTube = () => {
                             let url2 = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${el.snippet.channelId}&key=${API_key}`
                             await axios.get(url2)
                                 .then((ans) => {
+                                    // console.log(ans);
                                     // console.log(ans);
                                     // arr.push({ ProfilePic: ans.data.items[0].sniet.thumbnails.high.url, channelId: ans.data.items[id})
                                     // if (img2.length !==
@@ -58,7 +63,7 @@ const YouTube = () => {
             // console.log(videoList);
         
         }
-    }, [img2])
+    }, [])
     // console.log(img2, videoList);
     const formatCash = n => {
         if (n < 1e3) return n;
